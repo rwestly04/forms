@@ -1,24 +1,47 @@
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(120deg, #f4f6f9, #dfe9f3);
+
+  background: url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* DARK OVERLAY */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: -1;
 }
 
 .container {
   width: 400px;
   margin: 50px auto;
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
   padding: 25px;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 
 h2 { text-align: center; }
 
 .form-group { margin-bottom: 15px; }
 
-input, select { width: 100%; padding: 8px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc; }
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
 
-input:focus, select:focus { border: 2px solid #007BFF; outline: none; }
+input:focus, select:focus {
+  border: 2px solid #007BFF;
+  outline: none;
+}
 
 button {
   width: 100%;
@@ -38,6 +61,32 @@ button:hover { transform: scale(1.05); }
 .form-group.error input,
 .form-group.error select { border: 2px solid red; }
 
+/* PASSWORD ICON */
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding: 10px 40px 10px 10px; /* space for icon */
+  box-sizing: border-box; /* 🔥 FIXES OVERFLOW */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.toggle-password:hover {
+  opacity: 0.7;
+}
+
+/* MODAL */
 .modal {
   display: none;
   position: fixed;
