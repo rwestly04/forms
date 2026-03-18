@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Registration</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+<h2>Student Registration Form</h2>
+
+<form id="registrationForm">
+
+<div class="form-group">
+<label>First Name *</label>
+<input type="text" id="firstName" required>
+<small class="error"></small>
+</div>
+
+<div class="form-group">
+<label>Middle Name</label>
+<input type="text" id="middleName">
+<small class="error"></small>
+</div>
+
+<div class="form-group">
+<label>Last Name *</label>
+<input type="text" id="lastName" required>
+<small class="error"></small>
+</div>
+
+<div class="form-group">
+<label>Course *</label>
+<select id="course" required>
+<option value="">Select Course</option>
+<option>BS Computer Science</option>
+<option>BS Information Technology</option>
+<option>BS Information Systems</option>
+</select>
+<small class="error"></small>
+</div>
+
+<div class="form-group">
+<label>Password *</label>
+<input type="password" id="password" required>
+<div id="strengthText"></div>
+<div class="strength-bar"><div id="strengthBar"></div></div>
+<small class="error"></small>
+</div>
+
+<div class="form-group">
+<label>Confirm Password *</label>
+<input type="password" id="confirmPassword" required>
+<small class="error"></small>
+</div>
+
+<div class="form-group">
+<label>Gender *</label>
+<div>
+<input type="radio" name="gender" value="Male"> Male
+<input type="radio" name="gender" value="Female"> Female
+</div>
+<small class="error"></small>
+</div>
+
+<button type="submit">Register</button>
+
+</form>
+</div>
+
+<!-- CONFIRMATION MODAL WITH TERMS -->
+<div id="confirmModal" class="modal">
+  <div class="modal-content">
+    <h3>Are you sure you want to register?</h3>
+    <div>
+      <input type="checkbox" id="modalTerms"> 
+      <label for="modalTerms">I accept Terms & Conditions *</label>
+      <small id="modalTermsError" class="error"></small>
+    </div>
+    <button id="confirmYes">Yes</button>
+    <button id="confirmNo">No</button>
+  </div>
+</div>
+
+<!-- SUCCESS MODAL -->
+<div id="successModal" class="modal">
+  <div class="modal-content">
+    <h3>✅ Registration Successful!</h3>
+    <p>Your account has been created.</p>
+    <button id="closeModal">OK</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
